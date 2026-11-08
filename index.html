@@ -3,24 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Playlist to TXT</title>
+<title>Sonovault</title>
+<meta name="description" content="Your favorite playlists, archived securely as text and tone.">
+<meta property="og:title" content="Sonovault">
+<meta property="og:description" content="Your favorite playlists, archived securely as text and tone.">
+<meta name="theme-color" content="#12100e">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="top">
-  <div class="brand">
-    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.2" fill="currentColor"/></svg>
-    <span>Playlist<b>TXT</b></span>
-  </div>
-  <span class="tag">YouTube playlist exporter</span>
+  <a class="brand" href="/" aria-label="Sonovault home">
+    <img src="logo-mark.png" alt="" width="26" height="30">
+    <span>Sonovault</span>
+  </a>
+  <span class="tag">YouTube playlist archiver</span>
 </header>
 
 <main>
   <section class="hero">
     <div class="copy">
-      <p class="eyebrow">For listeners who keep a library</p>
-      <h1>Every track in your playlist, in one clean text file.</h1>
-      <p class="lead">Paste a YouTube playlist link to export all video titles. Keep it as a backup, share it with a friend, or drop it into your notes.</p>
+      <h1>Your favorite playlists, archived securely as text and tone.</h1>
+      <p class="lead">Paste a YouTube playlist link to save every title as a text file, or convert the whole playlist to MP3s in one .zip.</p>
 
       <label for="url">Playlist link</label>
       <div class="field">
@@ -36,30 +41,7 @@
     </div>
 
     <div class="art" aria-hidden="true">
-      <svg class="deck" viewBox="0 0 360 360">
-        <defs>
-          <radialGradient id="vg" cx="50%" cy="50%" r="50%">
-            <stop offset="0" stop-color="#2a2623"/><stop offset="1" stop-color="#0d0c0b"/>
-          </radialGradient>
-        </defs>
-        <circle cx="180" cy="180" r="172" fill="#1c1a18" stroke="#2c2926"/>
-        <g class="disc">
-          <circle cx="180" cy="180" r="150" fill="url(#vg)"/>
-          <g fill="none" stroke="#fff" stroke-opacity=".07">
-            <circle cx="180" cy="180" r="140"/><circle cx="180" cy="180" r="128"/><circle cx="180" cy="180" r="116"/>
-            <circle cx="180" cy="180" r="104"/><circle cx="180" cy="180" r="92"/><circle cx="180" cy="180" r="80"/>
-          </g>
-          <path d="M180 30 A150 150 0 0 1 330 180" fill="none" stroke="#fff" stroke-opacity=".08" stroke-width="22"/>
-          <circle cx="180" cy="180" r="52" fill="#e0a43a"/>
-          <circle cx="180" cy="180" r="44" fill="none" stroke="#14110e" stroke-opacity=".35"/>
-          <circle cx="180" cy="180" r="7" fill="#14110e"/>
-        </g>
-        <g class="arm">
-          <circle cx="322" cy="48" r="16" fill="#2c2926" stroke="#3a3632"/>
-          <path d="M322 48 L246 238" stroke="#8d867d" stroke-width="5" stroke-linecap="round"/>
-          <rect x="232" y="232" width="22" height="34" rx="4" transform="rotate(-20 243 249)" fill="#cfc8bd"/>
-        </g>
-      </svg>
+      <img class="mark" src="logo-mark.png" alt="" width="260" height="296">
       <div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
     </div>
   </section>
@@ -96,7 +78,10 @@
   </section>
 </main>
 
-<footer>Titles are fetched through the YouTube Data API. Your API key stays on the server.</footer>
+<footer>
+  <img src="logo-mark.png" alt="" width="14" height="16">
+  <span>Sonovault fetches titles through the YouTube Data API.</span>
+</footer>
 <script src="script.js"></script>
 </body>
 </html>

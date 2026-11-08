@@ -1,23 +1,30 @@
-# Playlist to TXT
+<p align="center"><img src="logo.png" alt="Sonovault" width="320"></p>
 
-Paste a YouTube playlist link and download every video title as a `.txt` file. The YouTube API key lives in a `.env` file on the server, so visitors never have to enter one.
+# Sonovault
+
+*Your favorite playlists, archived securely as text and tone.*
+
+Paste a YouTube playlist link and download every video title as a `.txt` file, or convert the whole playlist to MP3s in one `.zip`.
 
 ## Features
 
-- Glassy, music-inspired UI: animated equalizer, floating colour orbs and a cursor-following glow
+- Warm amber, vinyl-inspired UI with the Sonovault shield logo, an animated equalizer and a glow that pulses while a job runs
 - Get every video title from a playlist of any length
 - Scrollable track list with a live filter and an "Open" link per video
 - Skips private and deleted videos
 - Optional numbering and video links
 - Download as `.txt` or copy to clipboard
 - **Download all tracks as MP3s in one `.zip`** (128/192/256/320 kbps) with live progress and cancel
-- API key stays on the server, never sent to the browser
 
 ## Project structure
 
 ```
 index.html     # page structure
 style.css      # styling
+logo.png       # full Sonovault logo (emblem, name and tagline)
+logo-mark.png  # shield emblem only, transparent background (header, hero, footer)
+favicon.png    # browser tab icon
+apple-touch-icon.png  # home-screen icon on iOS
 script.js      # front-end logic (track list, filter, download, copy)
 server.js      # Node/Express server, reads .env, calls YouTube, runs yt-dlp + ffmpeg
 package.json   # dependencies

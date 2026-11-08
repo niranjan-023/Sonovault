@@ -23,8 +23,9 @@ const MAX_ACTIVE_JOBS = 3;
 const JOB_TTL_MS = 30 * 60 * 1000;
 const BITRATES = [128, 192, 256, 320];
 
-// Serve only the three public front-end files (never the whole folder, so .env stays private)
-["index.html", "style.css", "script.js"].forEach(f => {
+// Serve only the public front-end files (never the whole folder, so .env stays private)
+const PUBLIC_FILES = ["index.html", "style.css", "script.js", "logo.png", "logo-mark.png", "favicon.png", "apple-touch-icon.png"];
+PUBLIC_FILES.forEach(f => {
   app.get(f === "index.html" ? ["/", "/index.html"] : "/" + f, (req, res) =>
     res.sendFile(path.join(__dirname, f)));
 });
@@ -216,7 +217,7 @@ app.post("/api/audio/start", async (req, res) => {
   const id = crypto.randomBytes(12).toString("hex");
   const job = {
     id, title: pl.title, bitrate, numbered,
-    dir: fs.mkdtempSync(path.join(os.tmpdir(), "pl2txt-")),
+    dir: fs.mkdtempSync(path.join(os.tmpdir(), "sonovault-")),
     status: "running", total: pl.videos.length, done: 0,
     current: new Set(), files: [], failures: [], procs: new Set(),
     cancelled: false, error: "", updatedAt: Date.now()
@@ -270,7 +271,7 @@ app.get("/api/audio/:id/download", (req, res) => {
 });
 
 app.listen(PORT, async () => {
-  console.log("Playlist to TXT running at http://localhost:" + PORT);
+  console.log("Sonovault running at http://localhost:" + PORT);
   if (!API_KEY) console.warn("Warning: YOUTUBE_API_KEY is not set. Create a .env file (see .env.example).");
   const t = await checkTools();
   if (t.audio) console.log("MP3 export: ready (yt-dlp + ffmpeg found).");

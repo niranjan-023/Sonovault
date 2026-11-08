@@ -1,7 +1,7 @@
 {
-  "name": "playlist-to-txt",
+  "name": "sonovault",
   "version": "3.0.0",
-  "description": "Turn a YouTube playlist link into a downloadable .txt of video titles, or a .zip of MP3s",
+  "description": "Sonovault: your favorite playlists, archived securely as text and tone.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
